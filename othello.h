@@ -20,16 +20,24 @@ public:
 	Othello() {}
 
 	void display_status()const;
+	///@return int
 	int evaluate()const;
+	///@return bool
 	bool is_game_over()const;
+	///@return bool
+	///@param move
 	bool is_legal(const string& move)const;
+	///@param move
 	void make_move(const string& move);
 	void restart();
 	void make_skips();
 	void countingPieces();
 	void whosTurn();
+	//@return new Othello(*this)
 	game* clone()const{return new Othello(*this);}
+	///@param moves
 	void compute_moves(std::queue<std::string>& moves)const;
+	///@return who
 	who winning()const;
 
 protected:

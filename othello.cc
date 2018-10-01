@@ -47,7 +47,7 @@ void Othello::display_status()const
   }
   cout << "\nEnter a move in the format(letter,number) (Ex: A3)" << endl;
 }
-
+///@param move
 void Othello::make_move(const string& move) {
 
   int c, r;
@@ -202,7 +202,8 @@ void Othello::restart() {
   skips = 0;
   openSpots = 60;
 }
-
+///@return true/false
+///@param move
 bool Othello::is_legal(const string& move)const {
 
   int c, r;
@@ -399,7 +400,7 @@ void Othello::countingPieces() {
   cout << "Black: "  << black << " ---" << " White: " << white;
   cout << endl;
 }
-
+///@return true/false
 bool Othello::is_game_over()const {
 
   if (skips == 2 || openSpots == 0 || black == 0 || white == 0) {
@@ -424,7 +425,7 @@ void Othello::whosTurn() {
 void Othello::make_skips() {
   skips++;
 }
-
+///@return who
 game::who Othello::winning()const {
 
   if (black > white) {
@@ -436,7 +437,7 @@ game::who Othello::winning()const {
   }
 
 }
-
+///@return b/w
 int Othello::evaluate()const {
 
   int tmp_white = w;
@@ -455,7 +456,7 @@ int Othello::evaluate()const {
     return w;
   }
 }
-
+///@param moves
 void Othello::compute_moves(std::queue<std::string>& moves)const {
   string r;
   string c;
